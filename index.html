@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="data:,">
+<title>AI Full Stack App Generator · Nived NS</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="src/app.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="logo" aria-hidden="true">FS</div>
+    <div><h1>AI Full Stack App Generator</h1><p class="tag">From a product brief to a runnable Node app: API, storage, validation, web screens and tests.</p></div></div>
+  <div class="topbar-right"><span id="mode-badge" class="badge">Demo mode (offline)</span>
+    <button id="open-settings" class="btn ghost small" type="button">Settings</button></div>
+</header>
+<main>
+<section class="card">
+  <div class="row between">
+    <h2>Describe the product</h2>
+    <button id="sample-btn" class="btn ghost small" type="button">Load sample brief</button>
+  </div>
+  <label for="brief-input">Business idea or product brief</label>
+  <textarea id="brief-input" rows="4" placeholder="An app called Bakery Orders for a small cake shop. We track customers, orders and products."></textarea>
+  <p class="hint">Demo mode finds the entities from keywords (customers, orders, products, tasks, bookings, tickets, leads, invoices, notes, events). Live mode lets a model design the entities.</p>
+  <div class="row end actions">
+    <button id="run-btn" class="btn" type="button">Generate the app</button>
+  </div>
+  <p id="status" class="status" role="status" aria-live="polite"></p>
+</section>
+<section id="result" class="card" hidden aria-live="polite">
+  <div class="row between">
+    <h2>The plan</h2>
+    <span id="mode-note" class="muted"></span>
+  </div>
+  <pre id="plan" class="output"></pre>
+  <div class="table-wrap">
+    <table class="routes">
+      <thead><tr><th>Method</th><th>Path</th><th>What it does</th></tr></thead>
+      <tbody id="routes"></tbody>
+    </table>
+  </div>
+  <h2>Files</h2>
+  <div id="file-list" class="chips"></div>
+  <p class="muted"><strong id="file-name"></strong></p>
+  <pre id="file-preview" class="output code-out"></pre>
+  <div class="row end actions">
+    <button id="download-btn" class="btn small" type="button">Download all files as one text bundle</button>
+  </div>
+</section>
+</main>
+<footer class="foot">Built by Nived NS</footer>
+<dialog id="settings-dialog" aria-labelledby="settings-title">
+  <div class="dialog-body">
+    <h2 id="settings-title">Live mode settings</h2>
+    <p class="hint">Any OpenAI-compatible chat-completions endpoint. Stored only in this browser (localStorage); the key is sent only to the endpoint you set here.</p>
+    <label for="set-base">API base URL</label>
+    <input id="set-base" type="url" placeholder="https://your-host.example/v1" autocomplete="off">
+    <label for="set-key">API key</label>
+    <input id="set-key" type="password" autocomplete="off">
+    <label for="set-model">Model</label>
+    <input id="set-model" type="text" placeholder="model-name" autocomplete="off">
+    <label class="check"><input id="set-live" type="checkbox"> Use the live model in this app</label>
+    <p id="set-status" class="status" role="status"></p>
+    <div class="row end">
+      <button id="set-clear" class="btn ghost small" type="button">Forget key</button>
+      <button id="set-cancel" class="btn ghost small" type="button">Cancel</button>
+      <button id="set-save" class="btn small" type="button">Save</button>
+    </div>
+  </div>
+</dialog>
+<script type="module" src="src/app.js"></script>
+</body>
+</html>

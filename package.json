@@ -1,0 +1,28 @@
+{
+  "name": "ai-fullstack-app-generator",
+  "version": "1.0.0",
+  "description": "Scaffolds a complete small full-stack app from a product brief: a Node HTTP API with validation and in-memory storage, a static web UI, and generated tests. Offline demo planner plus an optional live model for the spec.",
+  "private": false,
+  "type": "module",
+  "author": "Nived NS",
+  "license": "MIT",
+  "keywords": [
+    "scaffold",
+    "full-stack",
+    "code-generator",
+    "nodejs",
+    "rest-api"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/connectnived-lab/ai-fullstack-app-generator.git"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "python3 -m http.server 8080",
+    "test": "node --test tests/unit/*.test.js",
+    "e2e": "python3 tests/e2e/smoke.py"
+  }
+}

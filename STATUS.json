@@ -1,0 +1,18 @@
+{
+  "tests_passed": 37,
+  "e2e_passed": true,
+  "e2e_checks": 16,
+  "viewports": [
+    "390x844",
+    "1440x900"
+  ],
+  "verified": [
+    "Unit tests (node --test): 37 passing across the runtime (validation, store, routing), spec validation and parsing, the brief planner, scaffolding, plan and bundle text, the agent in demo and live modes, and a round-trip run of a generated project's own tests (6 generated tests pass).",
+    "End-to-end (Playwright, Chromium): 16 checks passing at 390x844 and 1440x900, covering the sample brief plan, routes, file browsing, download control, and the live spec path with a mocked endpoint.",
+    "Screenshots taken from the running app and reviewed."
+  ],
+  "unverified": [
+    "Generated apps were not deployed or opened in a browser after generation; the generated API tests were run against the in-process server only.",
+    "Live spec quality against a real model was not tested (mocked endpoint only)."
+  ]
+}

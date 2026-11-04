@@ -1,0 +1,10 @@
+.row.between{justify-content:space-between}
+.row.end{justify-content:flex-end}
+.actions{margin-top:14px}
+.table-wrap{overflow-x:auto;margin-top:8px}
+table.routes{border-collapse:collapse;width:100%;font-size:.9rem}
+table.routes th,table.routes td{text-align:left;border-bottom:1px solid var(--line);padding:7px 6px}
+table.routes td:nth-child(2){font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;overflow-wrap:anywhere}
+.code-out{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.82rem;white-space:pre;overflow:auto;max-height:420px}
+.chip[aria-pressed="true"]{background:var(--accent);color:#fff}
+#brief-input{min-height:110px}
